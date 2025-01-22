@@ -1,8 +1,3 @@
-import { logger } from "../utils/logger.util";
-import { httpError } from "../utils/httpError.util";
-import { httpSuccess } from "../utils/httpSuccess.util";
-import { HttpStatusCode } from "../types/http.type";
-import { NextFunction, Request, Response } from "express";
 import {
   createInvoiceService,
   deleteInvoiceByIdService,
@@ -10,7 +5,12 @@ import {
   getInvoiceByIdService,
   getInvoiceByReferenceService,
   updateInvoiceByIdService,
-} from "../services/invoice.service";
+} from "@/services/invoice.service";
+import { HttpStatusCode } from "@/types/http.type";
+import { httpError } from "@/utils/httpError.util";
+import { httpSuccess } from "@/utils/httpSuccess.util";
+import { logger } from "@/utils/logger.util";
+import { NextFunction, Request, Response } from "express";
 
 export const createInvoiceController = async (
   req: Request,

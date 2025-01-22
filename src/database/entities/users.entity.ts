@@ -1,5 +1,5 @@
-import { hashPassword } from "../../utils/passwordHash.util";
-import { UserRole } from "../../types/users.type";
+import { hashPassword } from "@/utils/passwordHash.util";
+import { UserRole } from "@/types/users.type";
 import {
   BaseEntity,
   Entity,

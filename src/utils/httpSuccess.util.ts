@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResponseType } from "../types/http.type";
+import { HttpStatusCode, ResponseType } from "@/types/http.type";
 
 export const httpSuccess = {
   success: ({ message, details }: ResponseType) => ({

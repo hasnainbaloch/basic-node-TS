@@ -1,5 +1,5 @@
 import { sign, verify } from "jsonwebtoken";
-import { config } from "../config";
+import { config } from "@/config";
 import { logger } from "./logger.util";
 
 export type TokenPayload = {

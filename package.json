@@ -5,18 +5,16 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon",
+    "dev": "nodemon --config nodemon.json",
     "build": "tsc && tsc-alias",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
   "dependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express-pino-logger": "^4.0.5",
     "amqplib": "^0.10.5",
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

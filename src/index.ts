@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { config } from "./config";
-import { logger } from "./utils/logger.util";
-import AppDataSource from "./database";
+import { config } from "@/config";
+import { logger } from "@/utils/logger.util";
+import AppDataSource from "@/database";
 
-import { routes } from "./routes";
+import { routes } from "@/routes";
 import cookieParser from "cookie-parser";
-import { errorMiddleware } from "./middleware/errorHandler.middleware";
+import { errorMiddleware } from "@/middleware/errorHandler.middleware";
 
 const app = express();
 
@@ -56,6 +56,16 @@ process.on("SIGTERM", async () => {
   logger.info("SIGTERM received. Closing database connection...");
   await closeDB();
   process.exit(0);
+});
+
+process.on("uncaughtException", (error) => {
+  logger.error(error);
+  process.exit(1);
+});
+
+process.on("unhandledRejection", (reason) => {
+  logger.error(`Unhandled Rejection, reason: ${reason}`);
+  process.exit(1);
 });
 
 startServer();

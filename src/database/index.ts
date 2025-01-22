@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 
-import { config } from "../config";
+import { config } from "@/config";
 import path from "path";
 import { Invoice, User } from "./entities";
 
