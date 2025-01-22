@@ -1,6 +1,6 @@
 import { ErrorRequestHandler, Request, Response, NextFunction } from "express";
-import { logger } from "../utils/logger.util";
-import { config } from "../config";
+import { logger } from "@/utils/logger.util";
+import { config } from "@/config";
 
 interface ErrorType extends Error {
   statusCode?: number;

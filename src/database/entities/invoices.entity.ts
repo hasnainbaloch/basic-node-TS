@@ -1,4 +1,4 @@
-import { InvoiceStatus, InvoicePaymentStatus } from "../../types/invoice.type";
+import { InvoiceStatus, InvoicePaymentStatus } from "@/types/invoice.type";
 import {
   Entity,
   BaseEntity,

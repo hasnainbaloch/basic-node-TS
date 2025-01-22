@@ -1,10 +1,11 @@
-import { Router } from "express";
+import { Router, RequestHandler } from "express";
 import {
   authenticateToken,
   authorizedRoles,
-} from "../middleware/auth.middleware";
+} from "@/middleware/auth.middleware";
 
-import { UserRole } from "../types/users.type";
+
+import { UserRole } from "@/types/users.type";
 import {
   createInvoiceController,
   deleteInvoiceByIdController,
@@ -12,9 +13,9 @@ import {
   getInvoiceByIdController,
   getInvoiceByReferenceController,
   updateInvoiceByIdController,
-} from "../controllers/invoices.controller";
-import { validate } from "../middleware/validation.middleware";
-import { InvoiceSchema } from "../schemas/invoice.schema";
+} from "@/controllers/invoices.controller";
+import { validate } from "@/middleware/validation.middleware";
+import { InvoiceSchema } from "@/schemas/invoice.schema";
 
 const router = Router();
 
@@ -22,48 +23,48 @@ const router = Router();
 router.post(
   "/invoice",
   authenticateToken,
-  validate(InvoiceSchema),
-  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER),
-  createInvoiceController
+  validate(InvoiceSchema) as RequestHandler,
+  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER) as RequestHandler,
+  createInvoiceController as RequestHandler
 );
 
 // get all invoices
 router.get(
   "/invoices",
   authenticateToken,
-  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER),
-  getAllInvoicesController
+  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER) as RequestHandler,
+  getAllInvoicesController as RequestHandler
 );
 
 // get invoice by id
 router.get(
   "/invoice/:id",
   authenticateToken,
-  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER),
-  getInvoiceByIdController
+  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER) as RequestHandler,
+  getInvoiceByIdController as RequestHandler
 );
 
 // update invoice by id
 router.put(
   "/invoice/:id",
   authenticateToken,
-  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER),
-  updateInvoiceByIdController
+  authorizedRoles(UserRole.ADMIN, UserRole.MANAGER) as RequestHandler,
+  updateInvoiceByIdController as RequestHandler
 );
 
 // delete invoice by id
 router.delete(
   "/invoice/:id",
   authenticateToken,
-  authorizedRoles(UserRole.ADMIN),
-  deleteInvoiceByIdController
+  authorizedRoles(UserRole.ADMIN) as RequestHandler,
+  deleteInvoiceByIdController as RequestHandler
 );
 
 // get invoice by reference
 router.get(
   "/invoice/reference/:reference",
   authenticateToken,
-  getInvoiceByReferenceController
+  getInvoiceByReferenceController as RequestHandler
 );
 
 export default router;

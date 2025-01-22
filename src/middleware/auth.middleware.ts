@@ -1,8 +1,8 @@
-import { httpError } from "../utils/httpError.util";
+import { httpError } from "@/utils/httpError.util";
 import { Request, Response, NextFunction } from "express";
-import { UserRole } from "../types/users.type";
-import { logger } from "../utils/logger.util";
-import { verifyAccessToken, TokenPayload } from "../utils/jwt.util";
+import { UserRole } from "@/types/users.type";
+import { logger } from "@/utils/logger.util";
+import { verifyAccessToken, TokenPayload } from "@/utils/jwt.util";
 
 const validateToken = async (req: Request): Promise<TokenPayload | null> => {
   const token = req.cookies.accessToken;

@@ -4,17 +4,17 @@ import {
   deleteUserByIdService,
   getAllUsersService,
   loginUserService,
-} from "../services/user.service";
-import { logger } from "../utils/logger.util";
-import { httpError } from "../utils/httpError.util";
-import { httpSuccess } from "../utils/httpSuccess.util";
-import { HttpStatusCode } from "../types/http.type";
+} from "@/services/user.service";
+import { logger } from "@/utils/logger.util";
+import { httpError } from "@/utils/httpError.util";
+import { httpSuccess } from "@/utils/httpSuccess.util";
+import { HttpStatusCode } from "@/types/http.type";
 import {
   generateAccessToken,
   generateRefreshToken,
   verifyRefreshToken,
-} from "../utils/jwt.util";
-import { config } from "../config";
+} from "@/utils/jwt.util";
+import { config } from "@/config";
 
 export const createUserController = async (
   req: Request,

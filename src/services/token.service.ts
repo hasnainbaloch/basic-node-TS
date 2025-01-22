@@ -1,8 +1,5 @@
-import { User } from "../database/entities/users.entity";
-import {
-  generateAccessToken,
-  generateRefreshToken,
-} from "../utils/jwt.util";
+import { User } from "@/database/entities";
+import { generateAccessToken, generateRefreshToken } from "@/utils/jwt.util";
 
 type AuthTokens = {
   accessToken: string;
@@ -18,11 +15,8 @@ export const generateAuthTokens = async (user: User): Promise<AuthTokens> => {
   const accessToken = generateAccessToken(payload);
   const refreshToken = generateRefreshToken(payload);
 
-
   return {
     accessToken,
     refreshToken,
   };
 };
-
-

@@ -5,7 +5,7 @@ dotenv.config();
 export const config = {
   port: process.env.PORT ?? 4000,
   appPrefix: process.env.APP_PREFIX ?? "/api/v1",
-  appPrefixV2: process.env.APP_PREFIX_V2 ?? "/api/v1",
+  appPrefixV2: process.env.APP_PREFIX_V2 ?? "/api/v2", // for future use
   nodeEnv: process.env.NODE_ENV ?? "development",
   database: {
     type: process.env.DB_TYPE ?? "postgres",

@@ -2,7 +2,7 @@ import {
   ResponseType,
   HttpStatusCode,
   ErrorResponseType,
-} from "../types/http.type";
+} from "@/types/http.type";
 
 export const httpError = {
   badRequest: ({ message, details }: ResponseType) => ({

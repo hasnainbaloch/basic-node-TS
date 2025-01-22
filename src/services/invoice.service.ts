@@ -1,10 +1,10 @@
-import { logger } from "../utils/logger.util";
-import AppDataSource from "../database";
-import { Invoice } from "../database/entities";
+import { logger } from "@/utils/logger.util";
+import AppDataSource from "@/database";
+import { Invoice } from "@/database/entities";
 import {
   CreateInvoiceInput,
   UpdateInvoiceInput,
-} from "../schemas/invoice.schema";
+} from "@/schemas/invoice.schema";
 
 const invoiceRepository = AppDataSource.getRepository(Invoice);
 
